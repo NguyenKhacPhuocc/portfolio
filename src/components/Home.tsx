@@ -101,7 +101,7 @@ export const HomePage = () => {
               initial="hidden"
               animate="visible"
               whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 800 }}
             >
               <img
                 src="/avatar.jpg"
@@ -113,9 +113,22 @@ export const HomePage = () => {
               {displayText}
               <span className="animate-pulse">|</span>
             </div>
-            <div className="text-[50px] font-bold text-indigo-200 h-[60px] overflow-hidden">
+            <motion.div
+              animate="visible"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className="text-[50px] font-bold text-indigo-200 h-[60px] overflow-hidden">
+              I am a <span className="">Developer</span>
+            </motion.div>
+            <motion.div
+              animate="visible"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className="text-[50px] font-bold text-indigo-200 h-[60px] overflow-hidden">
               WELCOME HERE!!!
-            </div>
+            </motion.div>
           </div>
           <div className="flex-1 flex flex-col text-center text-[70px] font-bold text-indigo-200 justify-center">
             {["Home", "About Me", "Skills", "Projects", "Education", "Contact"].map((item, index) => (

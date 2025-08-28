@@ -28,8 +28,7 @@ const paragraphs: JSX.Element[] = [
 
   <span key={3}>
     Over the past few years, I’ve worked on projects that combine both frontend and backend
-    development, which has strengthened my interest in becoming a{" "}
-    <span className="font-semibold text-indigo-300">Fullstack Developer</span>.
+    development.
   </span>,
 
   <span key={4}>

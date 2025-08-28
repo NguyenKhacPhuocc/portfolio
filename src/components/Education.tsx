@@ -12,7 +12,7 @@ export const Education = () => {
       degree: "Major in Information Technology",
       gpa: "GPA: 3.5/4",
       achievements: ["Scholarship for Excellent Academic Performance (2025)"],
-      location: "54 Triều Khúc, P.Thanh Xuân, Thành phố Hà Nội, Việt Nam",
+      location: "54 Triều Khúc, Quận Thanh Xuân, Thành phố Hà Nội, Việt Nam",
       type: "university"
     }
   ];
@@ -39,12 +39,11 @@ export const Education = () => {
       course: "Frontend Development",
       description: "A course on building modern web interfaces with cutting-edge technologies",
       skills: [
-        "HTML5, CSS3, JavaScript ES6+",
+        "HTML, CSS, JavaScript",
         "React.js with Hooks",
         "Next.js framework and SSR",
         "TypeScript in real-world projects",
         "Responsive Web Design",
-        "RESTful API integration",
       ]
     },
     {

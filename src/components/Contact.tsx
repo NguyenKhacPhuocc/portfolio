@@ -98,15 +98,6 @@ export const Contact = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="space-y-8"
         >
-          <div>
-            <h3 className="text-2xl font-bold text-cyan-400 mb-6">Get in Touch</h3>
-            <p className="text-slate-300 mb-8">
-              I&#39;m currently looking for internship opportunities as a Frontend or Backend Developer.
-              If you have any questions or would like to discuss potential collaboration,
-              feel free to reach out!
-            </p>
-          </div>
-
           {/* Contact Details */}
           <div className="space-y-6">
             <div className="flex items-start">

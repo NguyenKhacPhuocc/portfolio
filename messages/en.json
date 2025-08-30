@@ -1,0 +1,133 @@
+{
+  "Header": {
+    "home": "Home",
+    "about_me": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "HomePage": {
+    "home": "Home",
+    "about_me": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact",
+    "i_am_a": "I am a",
+    "developer": "Developer",
+    "welcome_here": "WELCOME HERE!!!"
+  },
+  "About": {
+    "about_me": "About Me",
+    "hello": "Hi, I am Phuoc 👋",
+    "des_1": "I’m a final-year IT student passionate about building modern and scalable web applications. With a solid foundation in ",
+    "react": "React ",
+    "nextjs": "Next.js",
+    "and": "and ",
+    "nodejs": "Node.js",
+    "des_2": "I enjoy creating responsive, efficient, and user-friendly digital solutions.",
+    "des_3": "Over the past few years, I’ve worked on projects that combine both frontend and backend development.",
+    "des_4": "As I approach graduation, my goal is to apply my skills in a professional environment, contribute to impactful projects, and continue growing in the tech industry."
+  },
+  "Skills": {
+    "skills": "Skills"
+  },
+  "Projects": {
+    "projects": "Projects",
+    "des_1": "Here are some of my recent projects that showcase my skills and experience.",
+    "live_demo": "Live Demo",
+    "role": "Role:",
+    "key_features": "Key Features:",
+    "project_1": {
+      "description": "A job search web application that allows users to search, apply for jobs, and manage CV.",
+      "features": {
+        "feature_1": "Integrated i18n and authentication/authorization using JWT",
+        "feature_2": "Recruit candidates and manage company jobs"
+      }
+    },
+    "project_2": {
+      "description": "A tour management system that allows admins to manage tours and customers to book tours online.",
+      "features": {
+        "feature_1": "Managed tours, categories, orders, and contacts, decentralization admin",
+        "feature_2": "Implemented auth & authorization, integrated payments (VNPay, ZaloPay)",
+        "feature_3": "Developed scalable RESTful APIs"
+      }
+    },
+    "project_3": {
+      "description": "An online music streaming website with a user-friendly interface.",
+      "features": {
+        "feature_1": "Online music streaming",
+        "feature_2": "Search functionality for songs and artists"
+      }
+    }
+  },
+  "Education": {
+    "title": "Education",
+    "description": "My academic journey and professional courses that have shaped my skills as a developer.",
+    "formal_education": "Formal Education",
+    "courses": "Courses",
+    "achievements": "Achievements",
+    "skillsAcquired": "Skills Acquired:",
+    "educationData": {
+      "degree": "Major in Information Technology",
+      "achievements": "Scholarship for Excellent Academic Performance (2025)"
+    },
+    "courses_1": {
+      "institution": "28 Tech Education Center",
+      "course": "Data Structures and Algorithms",
+      "description": "An in-depth course on data structures and algorithms",
+      "skills": {
+        "skill_1": "Practice and improve algorithmic thinking",
+        "skill_2": "Sorting algorithms",
+        "skill_3": "Linked lists & binary trees",
+        "skill_4": "Data structures, stacks, queues",
+        "skill_5": "Graph theory"
+      }
+    },
+    "courses_2": {
+      "institution": "28 Tech Education Center",
+      "course": "Frontend Development",
+      "description": "A course on building modern web interfaces with cutting-edge technologies",
+      "skills": {
+        "skill_1": "HTML, CSS, JavaScript",
+        "skill_2": "React.js with Hooks",
+        "skill_3": "Next.js framework and SSR",
+        "skill_4": "TypeScript in real-world projects",
+        "skill_5": "Responsive Web Design"
+      }
+    },
+    "courses_3": {
+      "institution": "28 Tech Education Center",
+      "course": "Backend Development with Node.js",
+      "description": "A course on building server-side systems with Node.js",
+      "skills": {
+        "skill_1": "Node.js runtime environment",
+        "skill_2": "Express.js framework",
+        "skill_3": "MongoDB and Mongoose ODM",
+        "skill_4": "RESTful API design",
+        "skill_5": "Authentication and authorization with JWT",
+        "skill_6": "Web application security",
+        "skill_7": "Basic deployment"
+      }
+    }
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "Let's connect! I'm always open to discussing new opportunities and interesting projects.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone & Zalo",
+    "locationLabel": "Location",
+    "email": "nguyenkhacphuoc08122004@gmail.com",
+    "phone": "0969916312",
+    "location": "Quận Nam Từ Liêm, Hà Nội",
+    "formTitle": "Send me a Message",
+    "nameLabel": "Name",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully! ✅",
+    "errorMessage": "An error occurred while sending the message. Please try again later."
+  }
+}

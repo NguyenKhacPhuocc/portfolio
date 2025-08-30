@@ -1,13 +1,24 @@
 "use client"
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export const HomePage = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "Nguyễn Khắc Phước";
   const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const t = useTranslations('HomePage');
+
+  const sections = useMemo(() => [
+    { id: "home", label: t("home") },
+    { id: "about_me", label: t("about_me") },
+    { id: "skills", label: t("skills") },
+    { id: "projects", label: t("projects") },
+    { id: "education", label: t("education") },
+    { id: "contact", label: t("contact") }
+  ], [t]);
 
   useEffect(() => {
     // Hiệu ứng gõ chữ lặp lại liên tục
@@ -90,13 +101,13 @@ export const HomePage = () => {
   return (
     <>
       <div
-        id="Hero"
-        className="p-[80px] h-screen bg-[url('/bg.jpg')] bg-cover bg-center bg-fixed"
+        id="home"
+        className="p-[80px] h-screen dark:bg-[url('/bg.jpg')] bg-[url('/bg-white.png')] bg-cover bg-center bg-fixed"
       >
         <div className="h-full container flex mx-auto rounded-[25px] p-[20px] gap-[20px] text-white">
-          <div className="flex-1 flex flex-col gap-[20px] justify-center items-center">
+          <div className="flex-1 flex flex-col gap-[20px] justify-center items-center dark:text-indigo-200 text-gray-800">
             <motion.div
-              className="w-[200px] h-[200px] overflow-hidden rounded-full border-4 border-indigo-300 shadow-lg"
+              className="w-[200px] h-[200px] overflow-hidden rounded-full border-4 dark:border-indigo-300 border-gray-500 shadow-lg"
               variants={avatarVariants}
               initial="hidden"
               animate="visible"
@@ -109,7 +120,7 @@ export const HomePage = () => {
                 className="w-full h-full object-cover"
               />
             </motion.div>
-            <div className="text-[50px] font-bold text-indigo-200 h-[60px] overflow-hidden text-wrap leading-[55px]">
+            <div className="text-[50px] font-bold h-[60px] overflow-hidden text-wrap leading-[55px]">
               {displayText}
               <span className="animate-pulse">|</span>
             </div>
@@ -118,22 +129,22 @@ export const HomePage = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="text-[50px] font-bold text-indigo-200 h-[60px] overflow-hidden">
-              I am a <span className="">Developer</span>
+              className="text-[50px] font-bold  h-[60px] overflow-hidden">
+              {t('i_am_a')} <span className="">{t('developer')}</span>
             </motion.div>
             <motion.div
               animate="visible"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="text-[50px] font-bold text-indigo-200 h-[60px] overflow-hidden">
-              WELCOME HERE!!!
+              className="text-[50px] font-bold h-[60px] text-center">
+              {t('welcome_here')}
             </motion.div>
           </div>
-          <div className="flex-1 flex flex-col text-center text-[70px] font-bold text-indigo-200 justify-center">
-            {["Home", "About Me", "Skills", "Projects", "Education", "Contact"].map((item, index) => (
+          <div className="flex-1 flex flex-col text-center text-[70px] font-bold dark:text-indigo-200 text-gray-800 justify-center">
+            {sections.map((item, index) => (
               <motion.div
-                key={item}
+                key={item.id}
                 custom={index}
                 variants={menuItemVariants}
                 initial="hidden"
@@ -142,10 +153,10 @@ export const HomePage = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href={`#${item.replace(" ", "")}`}
+                  href={`#${item.id}`}
                   className="hover:text-indigo-500 transition-colors duration-300 block"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               </motion.div>
             ))}

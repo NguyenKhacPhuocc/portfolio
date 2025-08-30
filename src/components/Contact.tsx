@@ -2,14 +2,16 @@
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub } from "react-icons/fi";
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
+import { useTranslations } from "next-intl";
 
 export const Contact = () => {
+  const t = useTranslations("Contact");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isSent, setIsSent] = useState(false);
@@ -18,7 +20,7 @@ export const Contact = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
     // Clear any existing errors when user starts typing
     if (error) setError("");
@@ -30,23 +32,23 @@ export const Contact = () => {
     setError("");
 
     try {
-      // Thay thế các thông số này bằng thông tin thực từ EmailJS của bạn
+      // Replace with your actual EmailJS credentials
       const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
       const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
 
-      // Gửi email sử dụng EmailJS
+      // Send email using EmailJS
       await emailjs.send(
         serviceID,
         templateID,
         {
           from_name: formData.name,
           from_email: formData.email,
-          title: formData.subject,        // Đổi từ subject thành title
+          title: formData.subject,
           message: formData.message,
           to_name: "Nguyễn Khắc Phước",
           reply_to: formData.email,
-          date: new Date().toLocaleString('vi-VN') // Thêm ngày gửi
+          date: new Date().toLocaleString("en-US"),
         },
         publicKey
       );
@@ -54,10 +56,10 @@ export const Contact = () => {
       setIsSent(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
 
-      // Reset trạng thái sau 3 giây
+      // Reset status after 3 seconds
       setTimeout(() => setIsSent(false), 3000);
     } catch (err) {
-      setError("Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại sau.");
+      setError(t("errorMessage"));
       console.error("Email sending error:", err);
     } finally {
       setIsLoading(false);
@@ -66,17 +68,17 @@ export const Contact = () => {
 
   return (
     <section
-      id="Contact"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-20 px-4 md:px-8 lg:px-16"
+      id="contact"
+      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-blue-300 via-sky-100 to-blue-300 py-20 px-4 md:px-8 lg:px-16"
     >
       <motion.h2
         initial={{ opacity: 0, y: -60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg mb-4"
+        className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 from-slate-700 via-gray-800 to-slate-900 bg-clip-text text-transparent drop-shadow-lg mb-4"
       >
-        Contact
+        {t("title")}
       </motion.h2>
 
       <motion.p
@@ -84,9 +86,9 @@ export const Contact = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="text-slate-300 text-lg max-w-2xl text-center mb-16"
+        className="dark:text-slate-300 text-slate-700 text-lg max-w-2xl text-center mb-16"
       >
-        Let&#39;s connect! I&#39;m always open to discussing new opportunities and interesting projects.
+        {t("description")}
       </motion.p>
 
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -105,12 +107,12 @@ export const Contact = () => {
                 <FiMail className="text-white text-xl" />
               </div>
               <div>
-                <h4 className="text-white font-semibold">Email</h4>
+                <h4 className="dark:text-white text-black font-semibold">{t("emailLabel")}</h4>
                 <a
-                  href="mailto:nguyenkhaephuoc08122004@gmail.com"
-                  className="text-cyan-300 hover:text-cyan-200 transition-colors"
+                  href={`mailto:${t("email")}`}
+                  className="dark:text-cyan-300 dark:hover:text-cyan-200 text-cyan-700 hover:text-cyan-900 transition-colors"
                 >
-                  nguyenkhacphuoc08122004@gmail.com
+                  {t("email")}
                 </a>
               </div>
             </div>
@@ -120,12 +122,12 @@ export const Contact = () => {
                 <FiPhone className="text-white text-xl" />
               </div>
               <div>
-                <h4 className="text-white font-semibold">Phone & Zalo</h4>
+                <h4 className="dark:text-white text-black font-semibold">{t("phoneLabel")}</h4>
                 <a
                   href="#"
-                  className="text-cyan-300 hover:text-cyan-200 transition-colors"
+                  className="dark:text-cyan-300 dark:hover:text-cyan-200 text-cyan-700 hover:text-cyan-900 transition-colors"
                 >
-                  0969916312
+                  {t("phone")}
                 </a>
               </div>
             </div>
@@ -135,21 +137,20 @@ export const Contact = () => {
                 <FiMapPin className="text-white text-xl" />
               </div>
               <div>
-                <h4 className="text-white font-semibold">Location</h4>
-                <p className="text-slate-300">Quận Nam Từ Liêm, Hà Nội</p>
+                <h4 className="dark:text-white text-black font-semibold">{t("locationLabel")}</h4>
+                <p className="dark:text-slate-300 text-slate-700">{t("location")}</p>
               </div>
             </div>
           </div>
 
           {/* Social Links */}
           <div className="pt-6">
-            {/* <h4 className="text-white font-semibold mb-4">Follow me on</h4> */}
             <div className="flex space-x-4">
               <a
                 href="https://github.com/NguyenKhacPhuocc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-slate-800 hover:bg-slate-700 p-3 rounded-lg transition-colors group"
+                className="bg-slate-700 hover:bg-slate-500 p-3 rounded-lg transition-colors group"
               >
                 <FiGithub className="text-white text-xl group-hover:text-cyan-300" />
               </a>
@@ -157,7 +158,7 @@ export const Contact = () => {
                 href="https://www.linkedin.com/in/ph%C6%B0%E1%BB%9Bc-nguy%E1%BB%85n-a299b0324/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-slate-800 hover:bg-slate-700 p-3 rounded-lg transition-colors group"
+                className="bg-slate-700 hover:bg-slate-500 p-3 rounded-lg transition-colors group"
               >
                 <FiLinkedin className="text-white text-xl group-hover:text-cyan-300" />
               </a>
@@ -175,7 +176,7 @@ export const Contact = () => {
         >
           {isSent && (
             <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-lg">
-              Tin nhắn đã được gửi thành công! ✅
+              {t("successMessage")}
             </div>
           )}
 
@@ -185,12 +186,14 @@ export const Contact = () => {
             </div>
           )}
 
-          <h3 className="text-2xl font-bold text-cyan-400 mb-6">Send me a Message</h3>
+          <h3 className="text-2xl font-bold dark:text-cyan-400 text-slate-100 mb-6">{t("formTitle")}</h3>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-slate-300 mb-2">Name</label>
+                <label htmlFor="name" className="block dark:text-slate-300 text-slate-100 mb-2">
+                  {t("nameLabel")}
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -204,7 +207,9 @@ export const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-slate-300 mb-2">Email</label>
+                <label htmlFor="email" className="block dark:text-slate-300 text-slate-100 mb-2">
+                  {t("emailLabel")}
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -219,7 +224,9 @@ export const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-slate-300 mb-2">Subject</label>
+              <label htmlFor="subject" className="block dark:text-slate-300 text-slate-100 mb-2">
+                {t("subjectLabel")}
+              </label>
               <input
                 type="text"
                 id="subject"
@@ -233,7 +240,9 @@ export const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-slate-300 mb-2">Message</label>
+              <label htmlFor="message" className="block dark:text-slate-300 text-slate-100 mb-2">
+                {t("messageLabel")}
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -256,20 +265,18 @@ export const Contact = () => {
               {isLoading ? (
                 <>
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Đang gửi...
+                  {t("sending")}
                 </>
               ) : (
                 <>
                   <FiSend className="mr-2" />
-                  Send Message
+                  {t("sendButton")}
                 </>
               )}
             </motion.button>
           </form>
         </motion.div>
       </div>
-
-
     </section>
   );
 };

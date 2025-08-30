@@ -1,5 +1,6 @@
 "use client"
 import { motion, Variants } from "framer-motion"
+import { useTranslations } from "next-intl"
 import { JSX } from "react"
 
 const textVariants: Variants = {
@@ -14,37 +15,31 @@ const textVariants: Variants = {
   }
 }
 
-const paragraphs: JSX.Element[] = [
-  <span key={1}>Hi, I am Phuoc 👋</span>,
-
-  <span key={2}>
-    I’m a final-year IT student passionate about building modern and scalable web applications.
-    With a solid foundation in{" "}
-    <span className="font-bold text-cyan-400">React</span>,{" "}
-    <span className="font-bold text-blue-400">Next.js</span>, and{" "}
-    <span className="font-bold text-green-400">Node.js</span>, I enjoy creating responsive,
-    efficient, and user-friendly digital solutions.
-  </span>,
-
-  <span key={3}>
-    Over the past few years, I’ve worked on projects that combine both frontend and backend
-    development.
-  </span>,
-
-  <span key={4}>
-    As I approach graduation, my goal is to apply my skills in a professional environment,
-    contribute to impactful projects, and continue growing in the tech industry.
-  </span>,
-]
-
-
 export const About = () => {
+  const t = useTranslations('About');
+  const paragraphs: JSX.Element[] = [
+    <span key={1}>{t('hello')}</span>,
 
+    <span key={2}>
+      {t('des_1')}
+      <span className="font-bold text-cyan-400">{t('react')} </span>,
+      <span className="font-bold text-blue-400">{t('nextjs')}</span>, {t('and')}
+      <span className="font-bold text-green-400">{t('nodejs')}</span>, {t('des_2')}
+    </span>,
+
+    <span key={3}>
+      {t('des_3')}
+    </span>,
+
+    <span key={4}>
+      {t('des_4')}
+    </span>,
+  ]
 
   return (
     <section
-      id="AboutMe"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-[80px]"
+      id="about_me"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-b dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-blue-300 via-sky-100 to-blue-300 p-[80px]"
     >
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Title */}
@@ -55,8 +50,8 @@ export const About = () => {
           viewport={{ once: true }}
           className="flex-1 text-center lg:text-left"
         >
-          <h2 className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
-            About Me
+          <h2 className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 from-slate-700 via-gray-800 to-slate-900 bg-clip-text text-transparent drop-shadow-lg">
+            {t('about_me')}
           </h2>
         </motion.div>
 

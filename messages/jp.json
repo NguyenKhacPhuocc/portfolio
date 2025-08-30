@@ -1,0 +1,133 @@
+{
+  "Header": {
+    "home": "ホーム",
+    "about_me": "自己紹介",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "education": "学歴",
+    "contact": "連絡先"
+  },
+  "HomePage": {
+    "home": "ホーム",
+    "about_me": "自己紹介",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "education": "学歴",
+    "contact": "連絡先",
+    "i_am_a": "私は",
+    "developer": "開発者です",
+    "welcome_here": "ようこそ！！！"
+  },
+  "About": {
+    "about_me": "自己紹介",
+    "hello": "こんにちは、フオックです 👋",
+    "des_1": "私は情報技術を専攻する最終学年の学生で、モダンでスケーラブルなウェブアプリケーションの構築に情熱を注いでいます。以下に関する確かな基盤を持っています：",
+    "react": "React ",
+    "nextjs": "Next.js",
+    "and": "および ",
+    "nodejs": "Node.js",
+    "des_2": "を活用し、レスポンシブで効率的、かつユーザーフレンドリーなデジタルソリューションの作成を楽しんでいます。",
+    "des_3": "過去数年間、フロントエンドとバックエンドの開発を組み合わせたプロジェクトに取り組んできました。",
+    "des_4": "卒業が近づく中、プロフェッショナルな環境でスキルを発揮し、影響力のあるプロジェクトに貢献し、技術業界で成長し続けることを目標としています。"
+  },
+  "Skills": {
+    "skills": "スキル"
+  },
+  "Projects": {
+    "projects": "プロジェクト",
+    "des_1": "以下は、私のスキルと経験を示す最近のプロジェクトの一部です。",
+    "live_demo": "ライブデモ",
+    "role": "役割：",
+    "key_features": "主な機能：",
+    "project_1": {
+      "description": "ユーザーが求人を検索・応募し、履歴書を管理できる求人検索ウェブアプリケーション。",
+      "features": {
+        "feature_1": "i18nとJWTを使用した認証/認可を統合",
+        "feature_2": "候補者の採用と企業求人の管理"
+      }
+    },
+    "project_2": {
+      "description": "管理者がツアーを管理し、顧客がオンラインでツアーを予約できるツアー管理システム。",
+      "features": {
+        "feature_1": "ツアー、カテゴリ、注文、連絡先の管理、及び管理者権限の分散",
+        "feature_2": "認証と認可の実装、支払い（VNPay、ZaloPay）の統合",
+        "feature_3": "スケーラブルなRESTful APIの開発"
+      }
+    },
+    "project_3": {
+      "description": "ユーザーフレンドリーなインターフェースを備えたオンライン音楽ストリーミングウェブサイト。",
+      "features": {
+        "feature_1": "オンライン音楽ストリーミング",
+        "feature_2": "曲やアーティストの検索機能"
+      }
+    }
+  },
+  "Education": {
+    "title": "学歴",
+    "description": "開発者としてのスキルを形成した私の学術的な旅と専門的なコース。",
+    "formal_education": "正式な学歴",
+    "courses": "コース",
+    "achievements": "受賞歴",
+    "skillsAcquired": "習得したスキル：",
+    "educationData": {
+      "degree": "情報技術専攻",
+      "achievements": "優秀な学業成績に対する奨学金（2025年）"
+    },
+    "courses_1": {
+      "institution": "28 Tech教育センター",
+      "course": "データ構造とアルゴリズム",
+      "description": "データ構造とアルゴリズムに関する詳細なコース",
+      "skills": {
+        "skill_1": "アルゴリズム思考の練習と向上",
+        "skill_2": "ソートアルゴリズム",
+        "skill_3": "リンクリストとバイナリツリー",
+        "skill_4": "データ構造、スタック、キュー",
+        "skill_5": "グラフ理論"
+      }
+    },
+    "courses_2": {
+      "institution": "28 Tech教育センター",
+      "course": "フロントエンド開発",
+      "description": "最先端技術を使用したモダンなウェブインターフェース構築に関するコース",
+      "skills": {
+        "skill_1": "HTML、CSS、JavaScript",
+        "skill_2": "フックを使用したReact.js",
+        "skill_3": "Next.jsフレームワークとSSR",
+        "skill_4": "実際のプロジェクトでのTypeScript",
+        "skill_5": "レスポンシブウェブデザイン"
+      }
+    },
+    "courses_3": {
+      "institution": "28 Tech教育センター",
+      "course": "Node.jsを使用したバックエンド開発",
+      "description": "Node.jsを使用したサーバーサイドシステム構築に関するコース",
+      "skills": {
+        "skill_1": "Node.js実行環境",
+        "skill_2": "Express.jsフレームワーク",
+        "skill_3": "MongoDBおよびMongoose ODM",
+        "skill_4": "RESTful API設計",
+        "skill_5": "JWTを使用した認証と認可",
+        "skill_6": "ウェブアプリケーションのセキュリティ",
+        "skill_7": "基本的なデプロイ"
+      }
+    }
+  },
+  "Contact": {
+    "title": "連絡先",
+    "description": "つながりましょう！新しい機会や面白いプロジェクトについて話し合うのはいつでも大歓迎です。",
+    "emailLabel": "メール",
+    "phoneLabel": "電話 & Zalo",
+    "locationLabel": "所在地",
+    "email": "nguyenkhacphuoc08122004@gmail.com",
+    "phone": "0969916312",
+    "location": "ハノイ市ナムトゥリエム区",
+    "formTitle": "メッセージを送信",
+    "nameLabel": "名前",
+    "subjectLabel": "件名",
+    "messageLabel": "メッセージ",
+    "sendButton": "メッセージを送信",
+    "sending": "送信中...",
+    "successMessage": "メッセージが正常に送信されました！ ✅",
+    "errorMessage": "メッセージの送信中にエラーが発生しました。後でもう一度お試しください。"
+  }
+}

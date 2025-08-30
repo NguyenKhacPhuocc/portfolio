@@ -18,6 +18,7 @@ import {
   SiI18Next,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const frontend = [
   { icon: <SiGit size={100} color="#F1502F" />, name: "Git" },
@@ -59,12 +60,12 @@ const InfiniteRow = ({ items, reverse = false }: { items: any[]; reverse?: boole
             className="group flex flex-col items-center justify-center min-w-[120px] transition-transform"
           >
             {/* Icon */}
-            <div className="transition-transform group-hover:scale-120 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]">
+            <div className="transition-transform group-hover:scale-120 dark:group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
               {skill.icon}
             </div>
 
             {/* Text */}
-            <p className="mt-2 text-sm text-gray-300 transition-all group-hover:text-white group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
+            <p className="mt-2 text-sm dark:text-gray-300 transition-all dark:group-hover:text-white text-gray-800 group-hover:text-black font-bold group-hover:scale-110 dark:group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
               {skill.name}
             </p>
           </div>
@@ -75,19 +76,20 @@ const InfiniteRow = ({ items, reverse = false }: { items: any[]; reverse?: boole
 };
 
 export const Skills = () => {
+  const t = useTranslations("Skills");
   return (
     <section
-      id="Skills"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-[80px]"
+      id="skills"
+      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-blue-300 via-sky-100 to-blue-300 py-[80px]"
     >
       <motion.h2
         initial={{ opacity: 0, y: -60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}   // Chạy 1 lần khi vào viewport
         transition={{ duration: 1, ease: "easeOut" }}
-        className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg"
+        className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 from-slate-700 via-gray-800 to-slate-900 bg-clip-text text-transparent drop-shadow-lg"
       >
-        Skills
+        {t('skills')}
       </motion.h2>
 
       <div className="w-full flex gap-[20px]  flex-col">

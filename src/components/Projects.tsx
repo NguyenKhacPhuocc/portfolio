@@ -2,9 +2,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { FiExternalLink, FiCode, FiServer } from "react-icons/fi";
 
 export const Projects = () => {
+  const t = useTranslations('Projects');
   const projects = [
     {
       id: 1,
@@ -12,11 +14,11 @@ export const Projects = () => {
       period: "20/07/2025 - 20/08/2025",
       image: "https://res.cloudinary.com/dlhxktrw3/image/upload/v1756300795/itjobsearch_l3g3uz.png",
       role: "Frontend & Backend",
-      description: "A job search web application that allows users to search, apply for jobs, and manage CV.",
+      description: t('project_1.description'),
       technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "SWR", "next-intl", "Framer Motion", "Node.js", "Express.js", "Mongoose", "JWT", "bcryptjs", "Multer", "Cloudinary", "Joi"],
       features: [
-        "Integrated i18n and authentication/authorization using JWT",
-        "Recruit candidates and manage company jobs"
+        t('project_1.features.feature_1'),
+        t('project_1.features.feature_2')
       ],
       demoUrl: "https://it-job-search-silk.vercel.app/en",
       githubUrls: [
@@ -30,12 +32,12 @@ export const Projects = () => {
       period: "31/03/2025 - 08/07/2025",
       image: "https://res.cloudinary.com/dlhxktrw3/image/upload/v1756302437/travelf_borut2.png",
       role: "Backend",
-      description: "A tour management system that allows admins to manage tours and customers to book tours online.",
+      description: t('project_2.description'),
       technologies: ["Node.js", "Express.js", "Mongoose", "RESTful API", "JWT", "Multer", "Cloudinary", "Nodemailer"],
       features: [
-        "Managed tours, categories, orders, and contacts, decentralization admin",
-        "Implemented auth & authorization, integrated payments (VNPay, ZaloPay)",
-        "Developed scalable RESTful APIs"
+        t('project_2.features.feature_1'),
+        t('project_2.features.feature_2'),
+        t('project_2.features.feature_3')
       ],
       demoUrl: "https://project-travelf.onrender.com/",
       githubUrls: [
@@ -48,11 +50,11 @@ export const Projects = () => {
       period: "21/01/2025 - 16/03/2025",
       image: "https://res.cloudinary.com/dlhxktrw3/image/upload/v1756300792/musestream_xcu3dr.png",
       role: "Frontend",
-      description: "An online music streaming website with a user-friendly interface.",
+      description: t('project_3.description'),
       technologies: ["React", "NextJS", "TailwindCSS", "TypeScript", "AOS", "Framer Motion"],
       features: [
-        "Online music streaming",
-        "Search functionality for songs and artists"
+        t('project_3.features.feature_1'),
+        t('project_3.features.feature_2'),
       ],
       demoUrl: "https://muse-stream.vercel.app/",
       githubUrls: [
@@ -63,17 +65,17 @@ export const Projects = () => {
 
   return (
     <section
-      id="Projects"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-20 md:px-8 lg:px-16"
+      id="projects"
+      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-blue-300 via-sky-100 to-blue-300 py-20 md:px-8 lg:px-16"
     >
       <motion.h2
         initial={{ opacity: 0, y: -60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg pb-4"
+        className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 from-slate-700 via-gray-800 to-slate-900 bg-clip-text text-transparent drop-shadow-lg pb-4"
       >
-        Projects
+        {t('projects')}
       </motion.h2>
 
       <motion.p
@@ -81,9 +83,9 @@ export const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="text-slate-300 text-lg max-w-2xl text-center mb-16"
+        className="dark:text-slate-300 text-slate-800 text-lg max-w-2xl text-center mb-16"
       >
-        Here are some of my recent projects that showcase my skills and experience.
+        {t('des_1')}
       </motion.p>
 
       <div className="px-[50px] w-full  space-y-20">
@@ -97,7 +99,7 @@ export const Projects = () => {
 
 const ProjectItem = ({ project, index }: { project: any; index: number }) => {
   const isEven = index % 2 === 0;
-
+  const t = useTranslations('Projects');
   return (
     <motion.div
       initial={{ opacity: 0, y: 80 }}
@@ -109,7 +111,7 @@ const ProjectItem = ({ project, index }: { project: any; index: number }) => {
       {/* Project Image/Placeholder */}
       <div className="w-full lg:w-1/2 relative group">
         <div className={`rounded-xl overflow-hidden shadow-2xl`}>
-          <div className="relative h-64 md:h-80 lg:h-96 bg-gradient-to-br from-cyan-900/20 to-indigo-900/20 flex items-center justify-center">
+          <div className="relative h-64 md:h-80 lg:h-96 bg-gradient-to-br dark:from-cyan-900/20 dark:to-indigo-900/20 from-cyan-900/50 to-indigo-900/50 flex items-center justify-center">
             {/* Project number and placeholder */}
             <div className="text-center">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
@@ -126,7 +128,7 @@ const ProjectItem = ({ project, index }: { project: any; index: number }) => {
                     className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg transition-colors duration-300"
                   >
                     <FiExternalLink size={18} />
-                    Live Demo
+                    {t('live_demo')}
                   </a>
                   <div className="flex gap-2">
                     {project.githubUrls.map((github: any, i: number) => (
@@ -152,22 +154,22 @@ const ProjectItem = ({ project, index }: { project: any; index: number }) => {
       {/* Project Info */}
       <div className="w-full lg:w-1/2">
         <div className="mb-2">
-          <span className="text-sm text-cyan-400 ">{project.period}</span>
+          <span className="text-sm dark:text-cyan-400 text-slate-900">{project.period}</span>
         </div>
 
         <motion.h3
-          className="text-2xl md:text-3xl font-bold text-white mb-4"
+          className="text-2xl md:text-3xl font-bold dark:text-white text-slate-900 mb-4"
           initial={{ opacity: 0, x: isEven ? -30 : 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {project.title}
-          <div className="text-sm text-slate-400">Role: {project.role}</div>
+          <div className="text-sm dark:text-slate-400 text-slate-800 ">{t('role')} {project.role}</div>
         </motion.h3>
 
         <motion.p
-          className="text-slate-300 mb-6 bg-slate-800/50 p-4 rounded-lg"
+          className="dark:text-slate-300 mb-6 bg-slate-800/50 p-4 rounded-lg"
           initial={{ opacity: 0, x: isEven ? -30 : 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -183,11 +185,11 @@ const ProjectItem = ({ project, index }: { project: any; index: number }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h4 className="text-lg font-semibold text-cyan-300 mb-2">Key Features:</h4>
-          <ul className="text-slate-300 space-y-1">
+          <h4 className="text-lg font-semibold dark:text-cyan-300 text-slate-900 mb-2">{t('key_features')}</h4>
+          <ul className="dark:text-slate-300 text-slate-800 space-y-1">
             {project.features.map((feature: string, i: number) => (
               <li key={i} className="flex items-start">
-                <span className="text-cyan-400 mr-2">•</span>
+                <span className="dark:text-cyan-400 text-slate-900 mr-2">•</span>
                 <span>{feature}</span>
               </li>
             ))}
@@ -225,7 +227,7 @@ const ProjectItem = ({ project, index }: { project: any; index: number }) => {
             className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg transition-colors duration-300"
           >
             <FiExternalLink size={18} />
-            Live Demo
+            {t('live_demo')}
           </a>
 
           <div className="flex gap-2">

@@ -1,0 +1,133 @@
+{
+  "Header": {
+    "home": "Trang chủ",
+    "about_me": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "education": "Học vấn",
+    "contact": "Liên hệ"
+  },
+  "HomePage": {
+    "home": "Trang chủ",
+    "about_me": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "education": "Học vấn",
+    "contact": "Liên hệ",
+    "i_am_a": "Tôi là một",
+    "developer": "Nhà phát triển",
+    "welcome_here": "CHÀO MỪNG ĐẾN VỚI TRANG WEB!!!"
+  },
+  "About": {
+    "about_me": "Giới thiệu",
+    "hello": "Xin chào, tôi là Phước 👋",
+    "des_1": "Tôi là sinh viên năm cuối ngành Công nghệ Thông tin, đam mê xây dựng các ứng dụng web hiện đại và có khả năng mở rộng. Với nền tảng vững chắc trong ",
+    "react": "React ",
+    "nextjs": "Next.js",
+    "and": "và ",
+    "nodejs": "Node.js",
+    "des_2": ", tôi thích tạo ra các giải pháp số thân thiện với người dùng, hiệu quả và đáp ứng nhanh.",
+    "des_3": "Trong vài năm qua, tôi đã làm việc trên các dự án kết hợp cả phát triển frontend và backend.",
+    "des_4": "Khi sắp tốt nghiệp, mục tiêu của tôi là áp dụng kỹ năng của mình trong môi trường chuyên nghiệp, đóng góp vào các dự án có ảnh hưởng và tiếp tục phát triển trong ngành công nghệ."
+  },
+  "Skills": {
+    "skills": "Kỹ năng"
+  },
+  "Projects": {
+    "projects": "Dự án",
+    "des_1": "Dưới đây là một số dự án gần đây của tôi, thể hiện kỹ năng và kinh nghiệm của tôi.",
+    "live_demo": "Xem trực tiếp",
+    "role": "Vai trò:",
+    "key_features": "Tính năng chính:",
+    "project_1": {
+      "description": "Ứng dụng web tìm kiếm việc làm cho phép người dùng tìm kiếm, ứng tuyển công việc và quản lý CV.",
+      "features": {
+        "feature_1": "Tích hợp i18n và xác thực/ủy quyền bằng JWT",
+        "feature_2": "Tuyển dụng ứng viên và quản lý công việc của công ty"
+      }
+    },
+    "project_2": {
+      "description": "Hệ thống quản lý tour du lịch cho phép quản trị viên quản lý tour và khách hàng đặt tour trực tuyến.",
+      "features": {
+        "feature_1": "Quản lý tour, danh mục, đơn hàng và liên hệ, phân quyền quản trị",
+        "feature_2": "Triển khai xác thực & ủy quyền, tích hợp thanh toán (VNPay, ZaloPay)",
+        "feature_3": "Phát triển API RESTful có khả năng mở rộng"
+      }
+    },
+    "project_3": {
+      "description": "Trang web phát nhạc trực tuyến với giao diện thân thiện với người dùng.",
+      "features": {
+        "feature_1": "Phát nhạc trực tuyến",
+        "feature_2": "Chức năng tìm kiếm bài hát và nghệ sĩ"
+      }
+    }
+  },
+  "Education": {
+    "title": "Học vấn",
+    "description": "Hành trình học tập và các khóa học chuyên nghiệp đã định hình kỹ năng của tôi với tư cách là một nhà phát triển.",
+    "formal_education": "Trường học",
+    "courses": "Khóa học đã tham gia",
+    "achievements": "Thành tựu",
+    "skillsAcquired": "Kỹ năng đạt được:",
+    "educationData": {
+      "degree": "Chuyên ngành Công nghệ Thông tin",
+      "achievements": "Học bổng cho Thành tích Học tập Xuất sắc (2025)"
+    },
+    "courses_1": {
+      "institution": "28 Tech",
+      "course": "Cấu trúc Dữ liệu và Thuật toán",
+      "description": "Khóa học chuyên sâu về cấu trúc dữ liệu và thuật toán",
+      "skills": {
+        "skill_1": "Rèn luyện và cải thiện tư duy thuật toán",
+        "skill_2": "Thuật toán sắp xếp",
+        "skill_3": "Danh sách liên kết & cây nhị phân",
+        "skill_4": "Cấu trúc dữ liệu, ngăn xếp, hàng đợi",
+        "skill_5": "Lý thuyết đồ thị"
+      }
+    },
+    "courses_2": {
+      "institution": "28 Tech",
+      "course": "Phát triển Frontend",
+      "description": "Khóa học về xây dựng giao diện web hiện đại với các công nghệ tiên tiến",
+      "skills": {
+        "skill_1": "HTML, CSS, JavaScript",
+        "skill_2": "React.js với Hooks",
+        "skill_3": "Khung Next.js và SSR",
+        "skill_4": "TypeScript trong các dự án thực tế",
+        "skill_5": "Thiết kế web đáp ứng các thiết bị"
+      }
+    },
+    "courses_3": {
+      "institution": "28 Tech",
+      "course": "Phát triển Backend với Node.js",
+      "description": "Khóa học về xây dựng hệ thống phía server với Node.js",
+      "skills": {
+        "skill_1": "Môi trường chạy Node.js",
+        "skill_2": "Khung Express.js",
+        "skill_3": "MongoDB và Mongoose ODM",
+        "skill_4": "Thiết kế API RESTful",
+        "skill_5": "Xác thực và ủy quyền với JWT",
+        "skill_6": "Bảo mật ứng dụng web",
+        "skill_7": "Triển khai cơ bản"
+      }
+    }
+  },
+  "Contact": {
+    "title": "Liên hệ",
+    "description": "Hãy kết nối! Tôi luôn sẵn sàng thảo luận về các cơ hội mới và các dự án thú vị.",
+    "emailLabel": "Email",
+    "phoneLabel": "Điện thoại & Zalo",
+    "locationLabel": "Vị trí",
+    "email": "nguyenkhacphuoc08122004@gmail.com",
+    "phone": "0969916312",
+    "location": "Quận Nam Từ Liêm, Hà Nội",
+    "formTitle": "Gửi Tin Nhắn",
+    "nameLabel": "Tên",
+    "subjectLabel": "Tiêu đề",
+    "messageLabel": "Tin nhắn",
+    "sendButton": "Gửi Tin Nhắn",
+    "sending": "Đang gửi...",
+    "successMessage": "Tin nhắn đã được gửi thành công! ✅",
+    "errorMessage": "Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại sau."
+  }
+}

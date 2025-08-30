@@ -22,7 +22,7 @@ export const About = () => {
 
     <span key={2}>
       {t('des_1')}
-      <span className="font-bold text-cyan-400">{t('react')} </span>,
+      <span className="font-bold text-cyan-400">{t('react')}</span>,
       <span className="font-bold text-blue-400">{t('nextjs')}</span>, {t('and')}
       <span className="font-bold text-green-400">{t('nodejs')}</span>, {t('des_2')}
     </span>,
